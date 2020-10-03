@@ -31,15 +31,22 @@ let computerCounter = 0;
 const game = () => {
 
     for (let i = 0; i < 5; i++) {
-        let answer = prompt('Say your choice? ', '');
-        let player = answer;
-        let computer = computerPlay();
-        alert(playRound(player, computer));
+
+        let answer = prompt('Paper/Scissors/Rock ? ', '');
+        if (isNaN(answer)) {
+            let player = answer;
+            let computer = computerPlay();
+            alert(playRound(player, computer));
+        } else {
+            alert("You can't enter number! Please enter a word!");
+            i--;
+        }
+
     }
 
     if (playerCounter > computerCounter) {
         return alert(`You win! Result is ${playerCounter}:${computerCounter}`);
-    } else if (playerCounter < computerCounter){
+    } else if (playerCounter < computerCounter) {
         return alert(`You lose! Result is ${playerCounter}:${computerCounter}`);
     } else {
         return alert(`It's ${playerCounter}:${computerCounter}. Draw!`);
