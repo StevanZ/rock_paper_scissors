@@ -1,56 +1,115 @@
+//  query selectors
+const buttons = document.querySelectorAll('.game-btn');
+const playerScore = document.querySelector('.player-result');
+const computerScore = document.querySelector('.computer-result');
+const whoWins = document.querySelector('.who-wins');
+const newGame = document.querySelector('.new-game');
+const status = document.querySelector('.game-status');
+const drawStatus = document.querySelector('.draw-status');
+
+
+let playerCount = 0;
+let computerCount = 0;
+
+
+playerScore.textContent = playerCount;
+computerScore.textContent = computerCount
+    ;
+
+// computer random choise 
 const computerPlay = () => {
     let choice = ['rock', 'scissors', 'paper'];
     return randomChoice = choice[Math.floor(Math.random() * choice.length)];
 }
 
 
+// render result
+const render = () => {
+    playerScore.textContent = playerCount;
+    computerScore.textContent = computerCount;
+    ;
+}
 
+
+
+// play one round
 const playRound = (playerSelection, computerSelection) => {
 
     if (playerSelection === computerSelection) {
-        return "it's a draw!";
+        drawStatus.classList.add('draw-status-shown');
+        setTimeout(() => {
+            if (drawStatus.classList.contains('draw-status-shown')) {
+                drawStatus.classList.remove('draw-status-shown');
+            }
+        }, 700);
     } else if (playerSelection === 'rock' && (computerSelection !== 'rock' && computerSelection !== 'paper')) {
-        playerCounter++;
-        return `You win ${playerSelection} is greater then ${computerSelection}`;
+        playerCount++;
     } else if (playerSelection === 'paper' && (computerSelection !== 'scissors' && computerSelection !== 'paper')) {
-        playerCounter++;
-        return `You win ${playerSelection} is greater then ${computerSelection}`;
+        playerCount++;
     } else if (playerSelection === 'scissors' && (computerSelection !== 'rock' && computerSelection !== 'scissors')) {
-        playerCounter++;
-        return `You win ${playerSelection} is greater then ${computerSelection}`;
+        playerCount++;
     } else {
-        computerCounter++;
-        return `You lose ${computerSelection} is greater then ${playerSelection}`;
+        computerCount++;
+    }
+
+    render();
+}
+
+// declare winner
+const declareWinner = (winner) => {
+    whoWins.textContent = `${winner} Wins!`;
+    buttons.forEach(btn => {
+        btn.classList.add('disable');
+    });
+    status.classList.add('status-visible');
+}
+
+// game controler
+const game = (answ) => {
+    let player = answ;
+    let computer = computerPlay();
+    playRound(player, computer);
+
+    if (playerCount === 5) {
+        declareWinner('Player');
+
+    } else if (computerCount === 5) {
+        declareWinner('Computer');
     }
 }
 
-let playerCounter = 0;
-let computerCounter = 0;
+
+// event listeners
+buttons.forEach(button => {
+    button.addEventListener('click', (e) => {
+        let answer = e.target.getAttribute('id');
+        game(answer.toLowerCase());
+    });
+});
 
 
-const game = () => {
+newGame.addEventListener('click', () => {
+    playerCount = 0;
+    computerCount = 0;
 
-    for (let i = 0; i < 5; i++) {
+    buttons.forEach(btn => {
+        btn.classList.remove('disable');
+    })
 
-        let answer = prompt('Paper/Scissors/Rock ? ', '');
-        if (isNaN(answer)) {
-            let player = answer;
-            let computer = computerPlay();
-            alert(playRound(player, computer));
-        } else {
-            alert("You can't enter number! Please enter a word!");
-            i--;
-        }
+    status.classList.remove('status-visible');
+    render();
+});
 
-    }
 
-    if (playerCounter > computerCounter) {
-        return alert(`You win! Result is ${playerCounter}:${computerCounter}`);
-    } else if (playerCounter < computerCounter) {
-        return alert(`You lose! Result is ${playerCounter}:${computerCounter}`);
-    } else {
-        return alert(`It's ${playerCounter}:${computerCounter}. Draw!`);
-    }
-}
+render();
 
-game();
+
+
+
+
+
+
+
+
+
+

@@ -3,10 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles.css">
     <title>Document</title>
 </head>
 <body>
+
+    <div class="wrapper">
+        <div class="heading">
+            <h2>Rock, Paper, Scissors</h2>
+        </div>
+
+        <div class="score-wrapper">
+            <div class="player">Player: <span class="player-result">1</span></div>
+            <span class="draw-status">Draw !</span>
+            <div class="computer">Computer: <span class="computer-result">2</span></div>
+        </div>
+
+        <div class="buttons-wrapper">
+            <div class="choise-wrapper">
+                <button id="rock" class="game-btn rock"></button>
+                <button id="paper" class="game-btn paper"></button>
+                <button id="scissors" class="game-btn scissors"></button>
+            </div>
+            
+            <div class="description">
+                <span class="desc">Rock</span>
+                <span class="desc">Paper</span>
+                <span class="desc">Scissors</span>
+            </div>
+        </div>
+
+        <div class="game-status">
+            <p>The game is over!</p>
+            <div class="who-wins"></div>
+            <div class="new-game-wrapper">
+                <button class="new-game">New Game</button>
+            </div>
+        </div>    
+    </div>
+   
+
     
+
     <script src="script.js"></script>
 </body>
 </html>

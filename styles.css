@@ -1,0 +1,168 @@
+body {
+  font-family: 'Architects Daughter', cursive;
+  background-color: bisque;
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+    text-align: center;
+}
+
+
+.score-wrapper {
+    font-family: 'Architects Daughter', cursive;
+    display: flex;
+    justify-content: space-evenly;
+    width: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.draw-status {
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 38px;
+    font-size: 18px;
+    position: absolute;
+    top: 10px;
+    display: none;
+}
+
+.draw-status-shown {
+    display: block;
+}
+
+.player {
+    color: #613588;
+    font-size: 30px;
+
+}
+
+.computer {
+    color: #613588;
+    font-size: 30px;
+}
+
+.buttons-wrapper {
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.choise-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+.description {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px auto;
+}
+
+.desc {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 200px;
+    height: 20px;
+}
+
+.game-btn {
+    width: 200px;
+    height: 150px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px;
+    transition: 0.4s;
+    box-shadow: 0px 9px 10px -2px rgba(0,0,0,0.46);
+}
+
+.disable {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: .3;
+}
+
+
+.game-btn:hover {
+    transform: scale(1.1);
+}
+
+.game-btn:active {
+  opacity: 0.5;
+  transform: scale(1.2);  
+}
+
+.rock {
+    background: url('/img/rock.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.scissors {
+    background: url('/img/scissors.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.paper {
+    background: url('/img/christmas-2942305_960_720.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-status {
+    text-align: center;
+    display: none;
+}
+
+.status-visible {
+    display: block;
+}
+
+
+
+.game-status p {
+    font-size: 23px;
+}
+
+.who-wins { 
+   font-size: 27px; 
+   color:#bd4386;
+}
+
+.new-game-wrapper {
+   text-align: center;  
+}
+
+.new-game {
+    font-family: 'Architects Daughter', cursive;
+    cursor: pointer;
+    width: 200px;
+    height: 38px;
+    background: cornflowerblue;
+    color: #fff;
+    border: 0;
+    border-radius: 4px;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.new-game:hover {
+    background: rgb(133, 170, 240);
+}
+
+button:focus {
+    outline: none;
+}
+
