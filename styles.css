@@ -101,21 +101,21 @@ h2 {
 }
 
 .rock {
-    background: url('/img/rock.jpg');
+    background: url('img/rock.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .scissors {
-    background: url('/img/scissors.jpg');
+    background: url('img/scissors.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .paper {
-    background: url('/img/christmas-2942305_960_720.webp');
+    background: url('img/christmas-2942305_960_720.webp');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
